@@ -1,11 +1,13 @@
+"use client"
+import { useForm } from "react-hook-form";
 
 
 const AddItem = () => {
-    const navigate = useNavigate()
-    const SecureAxios = useAxiosSecure()
-    const { user } = useAuth()
-    const publicAxios = usePublicAxios()
-    const IMG_IMG_HOSTING = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_API_KEY_IMGBB}`
+    // const navigate = useNavigate()
+    // const SecureAxios = useAxiosSecure()
+    // const { user } = useAuth()
+    // const publicAxios = usePublicAxios()
+    // const IMG_IMG_HOSTING = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_API_KEY_IMGBB}`
     const {
         register,
         handleSubmit,
@@ -13,20 +15,20 @@ const AddItem = () => {
         formState: { errors },
     } = useForm()
 
-    const { isPending, error, refetch, data: store = {} } = useQuery({
-        queryKey: ['shop-data'],
-        queryFn: async () => {
-            const res = await SecureAxios.get(`/shop-data/${user?.email}`)
-            return res.data
-        }
-    })
+    // const { isPending, error, refetch, data: store = {} } = useQuery({
+    //     queryKey: ['shop-data'],
+    //     queryFn: async () => {
+    //         const res = await SecureAxios.get(`/shop-data/${user?.email}`)
+    //         return res.data
+    //     }
+    // })
 
 
-    if (isPending) return 'Loading...'
-    if (error) return 'An error has occurred: ' + error.message
-    refetch()
+    // if (isPending) return 'Loading...'
+    // if (error) return 'An error has occurred: ' + error.message
+    // refetch()
 
-    const Limit = parseInt(store?.limit - 1)
+    // const Limit = parseInt(store?.limit - 1)
 
     const onSubmit = async (data) => {
         const cost = parseInt(data?.Cost)
@@ -59,7 +61,7 @@ const AddItem = () => {
                     discount: data.Discount,
                     quantity: data.Quantity,
                     product_name: data.Product_Name,
-                    location: data.Location,
+                    Area: data.Area,
                     description: data.Description,
                     photo: res.data?.data?.display_url
                 }
@@ -98,54 +100,55 @@ const AddItem = () => {
     }
     return (
         <div>
+           
             <h1 className=" text-2xl font-bold text-blue-700 mt-10 text-center">Add Your Product </h1>
             <form onSubmit={handleSubmit(onSubmit)} className=" ">
                 <div className="w-10/12 md:w-10/12 lg:w-10/12 my-14 mx-auto grid grid-cols-2 gap-5">
                     <div className="form-control">
                         <label className="label">
-                            <span className=" label-text text-black">Product Name</span>
+                            <span className=" label-text text-gray-400">Product Name</span>
                         </label>
                         <input type="text" className="pl-4" placeholder="Product Name" {...register("Product_Name", { required: true, maxLength: 80 })} />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className=" label-text text-black">Quantity</span>
+                            <span className=" label-text text-gray-400">Quantity</span>
                         </label>
-                        <input type="number" className="pl-4 " placeholder="Quantity" {...register("Quantity", { required: true, maxLength: 100 })} />
+                        <input type="number" className="pl-4 " placeholder="Quantity by kg" {...register("Quantity", { required: true, maxLength: 100 })} />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className=" label-text text-black">Location</span>
+                            <span className=" label-text text-gray-400">Area</span>
                         </label>
-                        <input type="text" className="pl-4 " placeholder="Location" {...register("Location", { required: true })} />
+                        <input type="text" className="pl-4 " placeholder="Area" {...register("Area", { required: true })} />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className=" label-text text-black">product Cost</span>
+                            <span className=" label-text text-gray-400">product Cost</span>
                         </label>
-                        <input type="number" className="pl-4 " placeholder="Cost" {...register("Cost", { required: true })} />
+                        <input type="number" className="pl-4 " placeholder="Cost by kg" {...register("Cost", { required: true })} />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className=" label-text text-black">Profit Margin (%)</span>
+                            <span className=" label-text text-gray-400">Profit Margin (%)</span>
                         </label>
                         <input type="number" className="pl-4 " placeholder="Profit Margin (%)" {...register("Profit_Margin", { required: true })} />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className=" label-text text-black">Discount (%)</span>
+                            <span className=" label-text text-gray-400">Discount (%)</span>
                         </label>
                         <input type="number" className="pl-4 " placeholder="Discount (%)" {...register("Discount", { required: true })} />
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className=" label-text text-black">Description</span>
+                            <span className=" label-text text-gray-400">Description</span>
                         </label>
                         <textarea {...register("Description", { required: true })} />
                     </div>
                     <div className="form-control">
                         <label className="label ">
-                            <span className=" label-text text-black">product img</span>
+                            <span className=" label-text text-gray-400">product img</span>
                         </label>
                         <input type="file" {...register("image", { required: true })} className=" input-bordered" />
                         {errors.firstName?.type === "image" && (
@@ -157,10 +160,10 @@ const AddItem = () => {
                     </div>
                 </div>
             </form>
-            <Toaster
+            {/* <Toaster
                 position="top-center"
                 reverseOrder={false}
-            />
+            /> */}
         </div>
     );
 };

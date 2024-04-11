@@ -1,6 +1,6 @@
 import Footer from "@/Component/footer/Footer";
 import Navbar from "@/Component/navbar/Navbar";
-import Image from "next/image";
+
 
 
 export const metadata = {
@@ -16,7 +16,7 @@ export default function Home() {
                 <section>
                     {/* Start Navbar */}
                     <Navbar />
-                    
+
                     <div class="relative py-12 bg-gray-900 sm:py-16 lg:py-20 xl:pt-32 xl:pb-44">
                         <div class="absolute inset-0 hidden lg:block">
                             <img class="object-cover object-right-bottom w-full h-full" src="https://cdn.rareblocks.xyz/collection/clarity-ecommerce/images/hero/1/background.png" alt="" />
@@ -90,9 +90,7 @@ export default function Home() {
                         </div>
                     </div>
                 </section>
-
             </div>
-
             {/* Footer section */}
             <div>
                 <Footer />
