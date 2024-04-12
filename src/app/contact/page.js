@@ -5,12 +5,12 @@ const page = () => {
         <div>
             <section className="bg-white dark:bg-gray-900">
                 <div className="container px-6 py-12 mx-auto">
-                    <div className=" mx-auto">
-                        <p className="font-medium text-blue-500 dark:text-blue-400">Contact us</p>
-
-                        <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">Get in touch</h1>
-
-                        <p className="mt-3 text-gray-500 dark:text-gray-400">Our friendly team would love to hear from you.</p>
+                    <div className="w-full mx-auto">
+                        <div className="text-center">
+                            <p className="font-medium text-blue-500 dark:text-blue-400">Contact us</p>
+                            <h1 className="mt-2 text-2xl font-semibold text-gray-800 md:text-3xl dark:text-white">Get in touch</h1>
+                            <p className="mt-3 text-gray-500 dark:text-gray-400">Our friendly team would love to hear from you.</p>
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-1 gap-12 mt-10 lg:grid-cols-3 p-10">
@@ -24,7 +24,7 @@ const page = () => {
 
                                 <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">Email</h2>
                                 <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">Our friendly team is here to help.</p>
-                                <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">hello@merakiui.com</p>
+                                <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">nillroy558@gmail.com</p>
                             </div>
 
                             <div>
@@ -37,7 +37,7 @@ const page = () => {
 
                                 <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">Office</h2>
                                 <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">Come say hello at our office HQ.</p>
-                                <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">100 Smith Street Collingwood VIC 3066 AU</p>
+                                <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">12 Villa,Vober-Bazar,Parbatipur Dinajpur Road,5250,Parbatipur,Dinajpur</p>
                             </div>
 
                             <div>
@@ -49,7 +49,7 @@ const page = () => {
 
                                 <h2 className="mt-4 text-base font-medium text-gray-800 dark:text-white">Phone</h2>
                                 <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">Mon-Fri from 8am to 5pm.</p>
-                                <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">+1 (555) 000-0000</p>
+                                <p className="mt-2 text-sm text-blue-500 dark:text-blue-400">+880 1580-321346</p>
                             </div>
                         </div>
 
