@@ -1,4 +1,4 @@
-import Footer from "@/Component/footer/Footer";
+
 
 export const metadata = {
     title: "farmer",
@@ -87,7 +87,7 @@ export default function Home() {
             </div>
             {/* Footer section */}
             <div>
-                <Footer />
+            
             </div>
         </div>
     );

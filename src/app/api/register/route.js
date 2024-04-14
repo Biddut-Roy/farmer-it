@@ -1,11 +1,10 @@
 import User from "@/models/User";
 import connect from "@/utils/db";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import { NextResponse } from "next/server";
 
 export const POST = async (request) => {
   const { email, password } = await request.json();
-
   await connect();
 
   const existingUser = await User.findOne({ email });
@@ -20,6 +19,8 @@ export const POST = async (request) => {
     password: hashedPassword,
   });
 
+  console.log( hashedPassword );
+
   try {
     await newUser.save();
     return new NextResponse("user is registered", { status: 200 });
@@ -28,4 +29,5 @@ export const POST = async (request) => {
       status: 500,
     });
   }
+
 };
