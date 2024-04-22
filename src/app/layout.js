@@ -20,7 +20,6 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <AuthProvider session={session}>
-          {/* Start Navbar */}
           <Navbar />
           {children}
         </AuthProvider>
